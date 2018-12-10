@@ -1,0 +1,21 @@
+<!--pages/welcomePage/welcomePage.wxml-->
+<import src="../we-cropper/we-cropper.wxml"/>
+
+
+<view class="container">
+
+  <view class="cropper-wrapper">
+      <template is="we-cropper" data="{{...cropperOpt}}"/>
+      <view class="cropper-buttons">
+
+        <view class="buttonContainer">
+          <button data-way="camera" bind:tap="chooseImage">使用相机</button>
+          <button data-way="album" bind:tap="chooseImage">相册选择</button>
+          <button bind:tap="nextPage" disabled="{{!picChoosed}}">Let's begin!</button>
+        </view>
+  
+      </view>
+  </view>
+
+  <!-- <image class = "welcomePic" src="{{welcomePic}}"></image> -->
+</view>

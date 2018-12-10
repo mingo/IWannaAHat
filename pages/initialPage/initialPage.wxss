@@ -1,0 +1,5 @@
+/* pages/welcomePage/welcomePage.wxss */
+page {
+  /* background-color:#c00; */
+  /* height: 100%; */
+}

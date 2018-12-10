@@ -1,0 +1,6 @@
+<!--pages/savePicPage/savePicPage.wxml-->
+<text>Save to my local</text>
+<view >
+  <canvas  class="myCanvas" canvas-id="myCanvas" style="height:300px;;width:100%;"/>
+  <button bind:tap="savePic">保存 Save</button>
+</view>

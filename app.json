@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/initialPage/initialPage",
+    "pages/wearHatPage/wearHatPage",
+    "pages/savePicPage/savePicPage"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#c00",
+    "backgroundColor": "#c00",
+    "backgroundColorTop": "#c00",
+    "navigationBarTitleText": "I wanna a HAT!",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "white"
+  }
+}
