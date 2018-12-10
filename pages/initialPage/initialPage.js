@@ -28,62 +28,8 @@ Page({
       }
     }
   },
-  assignPicChoosed(){
-    if (this.data.bgPic) {
-      this.setData({
-        picChoosed: true
-      })
-    } else {
-      this.setData({
-        picChoosed: false
-      })
-    }
-  },
-  touchStart(e) {
-    this.wecropper.touchStart(e)
-  },
-  touchMove(e) {
-    this.wecropper.touchMove(e)
-  },
-  touchEnd(e) {
-    this.wecropper.touchEnd(e)
-  },
 
-  chooseImage(from) {
-    const self = this;
-    wx.chooseImage({
-      count: 1,
-      sizeType: ["original", "compressed"],
-      sourceType: [from.target.dataset.way],
-      success: (res) => {
-        this.setData({
-          bgPic: res.tempFilePaths[0]
-        });
-        self.wecropper.pushOrign(this.data.bgPic);
-        this.assignPicChoosed();
-      },
-      fail: (res) => {
-        this.assignPicChoosed();
-      },
-      complete: (res) => {
-        this.assignPicChoosed();
-      },
-    })
-  },
 
-  getCropperImage() {
-    const src = this.data.bgPic;
-    this.wecropper.getCropperImage((src) => {
-      if (src) {
-        console.log(src)
-        this.setData({
-          bgPic: src
-        });
-      } else {
-        console.log('Unable to get the image path')
-      }
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -117,6 +63,92 @@ Page({
       .updateCanvas()
   },
 
+
+
+
+
+  /**
+   * Determinate whether the picture is choosed or not
+   */
+  assignPicChoosed(){
+    if (this.data.bgPic) {
+      this.setData({
+        picChoosed: true
+      })
+    } else {
+      this.setData({
+        picChoosed: false
+      })
+    }
+  },
+
+  /**
+   * 
+   * Cropper touch handler
+   */
+  touchStart(e) {
+    this.wecropper.touchStart(e)
+  },
+  touchMove(e) {
+    this.wecropper.touchMove(e)
+  },
+  touchEnd(e) {
+    this.wecropper.touchEnd(e)
+  },
+
+
+  /**
+   * 
+   * Image uploader
+   */
+  imageUploader(from) {
+    const self = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ["original", "compressed"],
+      sourceType: [from.target.dataset.way],
+      success: (res) => {
+        this.setData({
+          bgPic: res.tempFilePaths[0]
+        });
+        self.wecropper.pushOrign(this.data.bgPic);
+        this.assignPicChoosed();
+      },
+      fail: (res) => {
+        this.assignPicChoosed();
+      },
+      complete: (res) => {
+        this.assignPicChoosed();
+      },
+    })
+  },
+
+
+  /**
+   * 
+   * Get the cropped image
+   */
+  getCropperImage() {
+    var src = this.data.bgPic;
+    this.wecropper.getCropperImage((src) => {
+      if (src) {
+        console.log(src)
+        this.setData({
+          bgPic: src
+        });
+      } else {
+        console.log('Unable to get the image path')
+      }
+    })
+  },
+
+
+  /**
+   * 
+   * Crop the image
+   * Write image data to global
+   * 
+   */
   nextPage(){
     this.getCropperImage();
     app.globalData.bgPic = this.data.bgPic;
