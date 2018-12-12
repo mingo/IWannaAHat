@@ -1,14 +1,16 @@
 <!--pages/welcomePage/welcomePage.wxml-->
 <import src="../we-cropper/we-cropper.wxml"/>
 
-
 <view class="container">
+    <!-- <open-data type="userAvatarUrl"></open-data>   -->
+    <!-- <open-data type="userNickName" lang="zh_CN"></open-data>    -->
   <!-- <p>Hi, welcome to WannaAHat! Upload a image and crop it. You can simply drag</p> -->
   <view class="cropper-wrapper">
       <template is="we-cropper" data="{{...cropperOpt}}"/>
       <view class="cropper-buttons">
 
         <view class="buttonContainer">
+          <button open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo">头像 Avatar</button>
           <button data-way="camera" bind:tap="imageUploader">相机 Camera</button>
           <button data-way="album" bind:tap="imageUploader">相册 Album</button>
           <button bind:tap="nextPage" disabled="{{!picChoosed}}">下一步 Let's begin!</button>

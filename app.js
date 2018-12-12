@@ -37,11 +37,11 @@ App({
     userInfo: null
     ,
     bgPic:null
-    // ,
-    // scale:1,
-    // rotate:0,
-    // hat_center_x:0,
-    // hat_center_x:0,
-    // currentHatId:1
+    ,
+    scale:1,
+    rotate:0,
+    hat_center_x:0,
+    hat_center_x:0,
+    currentHatId:1
   }
 })

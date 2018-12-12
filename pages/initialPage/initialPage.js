@@ -90,6 +90,22 @@ Page({
     this.wecropper.touchEnd(e)
   },
 
+
+  /**
+   * 上传头像
+   * Avatar uploader
+   */
+  onGotUserInfo: function (e) {
+    const self = this;
+    console.log("avatar=" + e.detail.userInfo.avatarUrl);
+    this.setData({
+      bgPic: e.detail.userInfo.avatarUrl
+    })
+    console.log("bgPic=" + this.data.bgPic);
+    self.wecropper.pushOrign(this.data.bgPic);
+    this.assignPicChoosed();
+  },
+
   /**
    * 上传图片
    * Image uploader
