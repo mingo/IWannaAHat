@@ -16,7 +16,7 @@
   
   </view>
 
-  <button bind:tap="combinePic">确定 OK</button>
+  <button bind:tap="combinePic" class="greenBtn">确定 OK</button>
   <scroll-view class="scrollView" scroll-x="true">
     <image class="imgList" wx:for="...imgList" wx:key="{{index+1}}" src="../../image/{{index+1}}.png" data-hat-id="{{index+1}}" bind:tap="chooseImg"></image>
   </scroll-view>

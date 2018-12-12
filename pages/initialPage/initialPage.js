@@ -13,6 +13,8 @@ Page({
   data: {
     picChoosed: false,
     bgPic: null,
+    opacity: 0.6, 
+
     cropperOpt: {
       id: 'cropper',
       width, 
@@ -67,11 +69,13 @@ Page({
   assignPicChoosed(){
     if (this.data.bgPic) {
       this.setData({
-        picChoosed: true
+        picChoosed: true,
+        opacity: 1
       })
     } else {
       this.setData({
-        picChoosed: false
+        picChoosed: false,
+        opacity: 0.6
       })
     }
   },

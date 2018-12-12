@@ -2,7 +2,9 @@
 page {
   background-color:#c00;
   height: 100%;
+  position: fixed;
 }
+
 
 .container {
   background-color:#c00;
@@ -13,3 +15,8 @@ page {
   justify-content: space-between;
   box-sizing: border-box;
 } 
+
+.greenBtn{
+  color: white;
+  background-color: #1AAD19;
+}

@@ -10,7 +10,7 @@
     "backgroundColor": "#c00",
     "backgroundColorTop": "#c00",
     "navigationBarTitleText": "I wanna a HAT!",
-    "enablePullDownRefresh": true,
+    "enablePullDownRefresh": false,
     "navigationBarTextStyle": "white"
   }
 }
