@@ -55,7 +55,7 @@ Page({
           filePath: res.tempFilePath,
           success: (res) => {
             wx.navigateTo({
-              url: '../index/index',
+              url: '../initialPage/initialPage',
               success: function (res) { },
               fail: function (res) { },
               complete: function (res) { },
