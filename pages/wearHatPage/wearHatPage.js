@@ -21,6 +21,7 @@ Page({
     rotate: 0
   },
   onLoad() {
+    console.log("wearHat: " + app.globalData.bgPic);
     this.setData({
       bgPic: app.globalData.bgPic
     })
