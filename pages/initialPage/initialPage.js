@@ -7,7 +7,6 @@ const width = device.windowWidth
 const height = width
 
 Page({
-
   /**
   * Initial data
   */
@@ -28,8 +27,6 @@ Page({
       }
     }
   },
-
-
 
   /**
    * 生命周期函数--监听页面加载
@@ -63,11 +60,8 @@ Page({
       .updateCanvas()
   },
 
-
-
-
-
   /**
+   * 定义图片是否上传
    * Determinate whether the picture is choosed or not
    */
   assignPicChoosed(){
@@ -83,7 +77,7 @@ Page({
   },
 
   /**
-   * 
+   * 触摸剪裁
    * Cropper touch handler
    */
   touchStart(e) {
@@ -96,9 +90,8 @@ Page({
     this.wecropper.touchEnd(e)
   },
 
-
   /**
-   * 
+   * 上传图片
    * Image uploader
    */
   imageUploader(from) {
@@ -123,40 +116,27 @@ Page({
     })
   },
 
-
   /**
-   * 
-   * Get the cropped image
+   * 转入下个页面
+   * Crop the image
+   * Write image data to global
+   * Navigate to next page
    */
-  getCropperImage() {
+  nextPage(){
     var src = this.data.bgPic;
     this.wecropper.getCropperImage((src) => {
       if (src) {
-        console.log("src" + src)
         this.setData({
           bgPic: src
         });
+        app.globalData.bgPic = this.data.bgPic;
+
+        wx.navigateTo({
+          url: '../wearHatPage/wearHatPage',
+        })
       } else {
         console.log('Unable to get the image path')
       }
-    })
-
-  },
-
-
-  /**
-   * 
-   * Crop the image
-   * Write image data to global
-   * 
-   */
-  nextPage(){
-    this.getCropperImage();
-    app.globalData.bgPic = this.data.bgPic;
-    console.log("before navigate: " + this.data.bgPic);
-    wx.navigateTo({
-      url: '../wearHatPage/wearHatPage',
-    })
-    console.log("after navigate: " + this.data.bgPic);
+    });
   }
 })

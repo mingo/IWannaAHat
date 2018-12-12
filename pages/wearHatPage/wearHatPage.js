@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    bgPic: null,
+    bgPic: app.globalData.bgPic,
     imgList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     currentHatId: 1,
 
@@ -21,6 +21,7 @@ Page({
     rotate: 0
   },
   onLoad() {
+    console.log("wearHat: " + app.globalData.bgPic);
     this.setData({
       bgPic: app.globalData.bgPic
     })

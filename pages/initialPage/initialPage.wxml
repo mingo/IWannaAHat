@@ -3,15 +3,15 @@
 
 
 <view class="container">
-
+  <!-- <p>Hi, welcome to WannaAHat! Upload a image and crop it. You can simply drag</p> -->
   <view class="cropper-wrapper">
       <template is="we-cropper" data="{{...cropperOpt}}"/>
       <view class="cropper-buttons">
 
         <view class="buttonContainer">
-          <button data-way="camera" bind:tap="imageUploader">使用相机</button>
-          <button data-way="album" bind:tap="imageUploader">相册选择</button>
-          <button bind:tap="nextPage" disabled="{{!picChoosed}}">Let's begin!</button>
+          <button data-way="camera" bind:tap="imageUploader">相机 Camera</button>
+          <button data-way="album" bind:tap="imageUploader">相册 Album</button>
+          <button bind:tap="nextPage" disabled="{{!picChoosed}}">下一步 Let's begin!</button>
         </view>
   
       </view>
