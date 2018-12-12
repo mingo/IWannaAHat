@@ -7,6 +7,7 @@ Page({
     bgPic: app.globalData.bgPic,
     imgList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     currentHatId: 1,
+    isHidingHat: false,
 
     hatCenterX: wx.getSystemInfoSync().windowWidth / 2,
     hatCenterY: 150,
@@ -42,6 +43,12 @@ Page({
     this.start_x = 0;
     this.start_y = 0;
   },
+
+
+  /*
+  **
+  ** Touch Handlers
+  */
   touchStart(e) {
     if (e.target.id == "hat") {
       this.touch_target = "hat";
@@ -56,6 +63,7 @@ Page({
       this.start_y = e.touches[0].clientY;
     }
   },
+
   touchEnd(e) {
     this.hat_center_x = this.data.hatCenterX;
     this.hat_center_y = this.data.hatCenterY;
@@ -68,6 +76,7 @@ Page({
     this.scale = this.data.scale;
     this.rotate = this.data.rotate;
   },
+
   touchMove(e) {
     var current_x = e.touches[0].clientX;
     var current_y = e.touches[0].clientY;
@@ -108,12 +117,39 @@ Page({
   },
 
 
+  /*
+  * Choose a hat from the bottom bar
+  */
   chooseImg(e) {
     console.log(e);
     this.setData({
-      currentHatId: e.target.dataset.hatId
+      currentHatId: e.target.dataset.hatId,
+      isHidingHat: false,
+
+      // reset the position and size of the hat
+      hatCenterX: wx.getSystemInfoSync().windowWidth / 2,
+      hatCenterY: 150,
+      cancelCenterX: wx.getSystemInfoSync().windowWidth / 2 - 50 - 2,
+      cancelCenterY: 100,
+      handleCenterX: wx.getSystemInfoSync().windowWidth / 2 + 50 - 2,
+      handleCenterY: 200,
+     
+      hatSize: 100,
+
+      scale: 1,
+      rotate: 0
     })
   },
+
+  /*
+  * Hide Hat
+  */
+  hideHat() {
+    this.setData({
+      isHidingHat: true
+    })
+  },
+
   combinePic() {
     app.globalData.scale = this.scale;
     app.globalData.rotate = this.rotate;
