@@ -42,6 +42,8 @@ Page({
     pc.drawImage("../../image/" + currentHatId + ".png", -hat_size / 2, -hat_size / 2, hat_size, hat_size);
     pc.draw();
   },
+
+
   savePic() {
     const windowWidth = wx.getSystemInfoSync().windowWidth;
     wx.canvasToTempFilePath({
@@ -54,14 +56,26 @@ Page({
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
           success: (res) => {
-            wx.navigateTo({
+            wx.showToast({
+              title: '保存成功 Saved!',
+              icon: 'success',
+              duration: 2000
+            });
+
+            setTimeout(()=>wx.navigateTo({
               url: '../initialPage/initialPage',
               success: function (res) { },
               fail: function (res) { },
               complete: function (res) { },
-            })
+            }), 1500)
+
             console.log("success:" + res);
           }, fail(e) {
+            wx.showToast({
+              title: '保存失败 Save failure',
+              icon: 'warn',
+              duration: 2000
+            })
             console.log("err:" + e);
           }
         })
