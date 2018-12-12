@@ -130,13 +130,13 @@ Page({
           bgPic: src
         });
         app.globalData.bgPic = this.data.bgPic;
+
+        wx.navigateTo({
+          url: '../wearHatPage/wearHatPage',
+        })
       } else {
         console.log('Unable to get the image path')
       }
     });
-    
-    wx.navigateTo({
-      url: '../wearHatPage/wearHatPage',
-    })
   }
 })
