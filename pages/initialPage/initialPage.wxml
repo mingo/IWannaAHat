@@ -2,7 +2,9 @@
 <import src="../we-cropper/we-cropper.wxml"/>
 
 <view class="container">
-  <!-- <p>Hi, welcome to WannaAHat! Upload a image and crop it. You can simply drag</p> -->
+  <h3>还在 "@微信官方，给我一顶圣诞帽吗?" NONONO, 现在就自定义你的圣诞帽！</h3>
+  <p>移动图片来改变剪裁区域，双指捏合缩放来改变所剪裁的大小。</p>
+  <p>Welcome to IWannaAHat! Upload a image and crop it. You can simply drag the canvas. Also, use two fingers to zoom in or out.</p>
   <view class="cropper-wrapper">
       <template is="we-cropper" data="{{...cropperOpt}}"/>
       <view class="cropper-buttons">

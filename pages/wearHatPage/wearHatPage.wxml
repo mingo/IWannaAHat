@@ -1,5 +1,5 @@
 <!--pages/wearHatPage/wearHatPage.wxml-->
-<text>Now, choose your hat and put it on!</text>
+  <h1>Now, put your hat on!</h1>
 <view wx:if="{{!combine}}">
   <view class="container" id="container" bind:touchstart="touchStart" bind:touchend="touchEnd" bind:touchmove="touchMove">
     <image class="bg" src="{{bgPic}}"></image>
@@ -10,13 +10,19 @@
     <icon type="waiting" class="handle" id="handle" color="green" hidden="{{isHidingHat}}"
       style="top:{{handleCenterY-10+'px'}};left:{{handleCenterX-10+'px'}}"> 
     </icon>
+
     <image class="hat" id='hat' src="../../image/{{currentHatId}}.png" hidden="{{isHidingHat}}"
       style="top:{{hatCenterY-hatSize/2-2+'px'}};left:{{hatCenterX-hatSize/2-2+'px'}};transform:rotate({{rotate+'deg'}}) scale({{scale}})">
     </image>
-  
   </view>
 
   <button bind:tap="combinePic" class="greenBtn">确定 OK</button>
+
+  <h3><span>1.左右滑动底部备选栏，预览更多帽子</span></h3>
+  <h3><span>2.按住帽子框右下角的绿色时针并拖动，完成缩放和和旋转</span></h3>
+  <p><span>1.Scroll the bottom bar horizontally to view more options！</span></p>
+  <p><span>2.Drag the green clock on the right-bottom corner to adjust the hat.</span></p>
+  
   <scroll-view class="scrollView" scroll-x="true">
     <image class="imgList" wx:for="...imgList" wx:key="{{index+1}}" src="../../image/{{index+1}}.png" data-hat-id="{{index+1}}" bind:tap="chooseImg"></image>
   </scroll-view>

@@ -1,40 +1,64 @@
 /* pages/wearHatPage/wearHatPage.wxss */
-.container{
-  height:300px;
-  width:100%;
-}
-.bg{
-  position: absolute;
-  z-index:0;
-  height: 300px;
-  width:300px;
-}
-button{
-  margin-top:10px;
 
+.container {
+  height: 300px;
+  width: 100%;
 }
-.hat{ 
+
+.bg {
+  position: absolute;
+  z-index: 0;
+  height: 300px;
+  width: 300px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.hat {
   height: 100px;
   width: 100px;
   position: absolute;
   border: dashed 2px yellow;
-  top:100px;
+  top: 100px;
 }
-.handle,.cancel{
+
+.handle, .cancel {
   position: absolute;
   z-index: 1;
-  width:20px;
-  height:20px;
+  width: 20px;
+  height: 20px;
 }
-.scrollView{
-   width: 100%; 
-   position: absolute;
-   bottom: 5px;
-   white-space: nowrap;
+
+.scrollView {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  white-space: nowrap;
 }
-.imgList{
+
+.imgList {
   height: 70px;
   width: 70px;
-  border:2px solid;
+  border: 2px solid;
+  border-color: white;
   margin: 5px;
+  /* background-color: white; */
+  background-color: #ee1c1ccb;
+  /* background-color: #3498DB; */
+}
+
+p span {
+  display: block;
+  margin: 0px 10px 0px 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+h3 span {
+  display: block;
+  margin: 0px 10px 0px 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }

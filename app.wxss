@@ -20,3 +20,58 @@ page {
   color: white;
   background-color: #1AAD19;
 }
+
+/* pages/welcomePage/welcomePage.wxss */
+h1 {
+  margin: 0px 10px 0px 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /* font-family: STHupo; */
+  font-family: Microsoft YaHei;
+  /* font-family: STLiti; */
+  /* font-family: STCaiyun; */
+  font-weight:bold;
+  color: white;
+  /* align-content: center; */
+  /* align-self: center; */
+  align-items: center;
+
+  }
+
+h3 {
+  margin: 0px 10px 0px 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /* font-family: STHupo; */
+  font-family: Microsoft YaHei;
+  /* font-family: STLiti; */
+  /* font-family: STCaiyun; */
+  font-weight:bold;
+  color: white;
+  }
+
+  h2 {
+  margin: 0px 10px 0px 10px;
+  align-items: baseline;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /* font-family: STHupo; */
+  font-family: Microsoft YaHei;
+  /* font-family: STLiti; */
+  /* font-family: STCaiyun; */
+  font-size: 16px;
+  color: white;
+  }
+
+  p {
+  margin: 0px 10px 0px 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /* font-family: STHupo; */
+  /* font-family: Microsoft YaHei; */
+  /* font-family: STLiti; */
+  /* font-family: STCaiyun; */
+  /* font-weight:bold; */
+  font-size: 14px;
+  color: white;
+  }
