@@ -1,0 +1,17 @@
+background images:
+
+
+
+   background-image: url(https://preppywallpapers.com/wp-content/uploads/2018/12/Christmas-iPhone-Wallpaper-33.jpg); 
+   background-image: url(https://preppywallpapers.com/wp-content/uploads/2018/12/Christmas-iPhone-Wallpaper-24.jpg); 
+   background-image: url(https://preppywallpapers.com/wp-content/uploads/2018/12/Christmas-iPhone-Wallpaper-53.jpg); 
+   background-image: url(https://preppywallpapers.com/wp-content/uploads/2018/12/Christmas-iPhone-Wallpaper-13.jpg); 
+
+
+
+   background-color:#c00; 
+   background-image: url(https://i.pinimg.com/736x/26/8e/8c/268e8ce04e735eb8d3f7fd307ca7d791.jpg); 
+   background-image: url(https://66.media.tumblr.com/1ee0f502d84d63ba01b1d7a550f6d9d4/tumblr_nw5z6tgpiv1sok2l1o1_1280.jpg); 
+   background-image: url(https://preppywallpapers.com/wp-content/uploads/2018/12/Christmas-iPhone-Wallpaper-7.jpg); 
+   background-position: center;  
+

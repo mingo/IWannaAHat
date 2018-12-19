@@ -1,16 +1,15 @@
 <!--pages/welcomePage/welcomePage.wxml-->
 <import src="../we-cropper/we-cropper.wxml"/>
 
-<view class="container">
-  <h3>还在 "@微信官方，给我一顶圣诞帽吗?" NONONO, 现在就自定义你的圣诞帽！</h3>
-  <p>移动图片来改变剪裁区域，双指捏合缩放来改变所剪裁的大小。</p>
-  <p>Welcome to IWannaAHat! Upload a image and crop it. You can simply drag the canvas. Also, use two fingers to zoom in or out.</p>
+<view class="container" >
+  <template is="initial-container" data="{{...containerOpt}}"/>
+  <!-- <h3>还在 "@微信官方，给我一顶圣诞帽吗?" NONONO, 现在就自定义你的圣诞帽！</h3> -->
   <view class="cropper-wrapper">
       <template is="we-cropper" data="{{...cropperOpt}}"/>
       <view class="cropper-buttons">
-
         <view class="buttonContainer">
-          <button open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo">头像 Avatar</button>
+          <button bind:tap="helpBtn" style='background-color:#FF7F50; color:white; opacity: 0.9'>帮助 help </button>
+          <button open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信头像 WX-Avatar</button>
           <button data-way="camera" bind:tap="imageUploader">相机 Camera</button>
           <button data-way="album" bind:tap="imageUploader">相册 Album</button>
           <button bind:tap="nextPage" disabled="{{!picChoosed}}" 

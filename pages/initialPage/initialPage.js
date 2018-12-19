@@ -2,9 +2,10 @@
 import WeCropper from '../we-cropper/we-cropper.js'
 
 const app = getApp();
-const device = wx.getSystemInfoSync() // get device info
-const width = device.windowWidth
-const height = width
+const device = wx.getSystemInfoSync(); // get device info
+const width = device.windowWidth;
+const height = width;
+const deviceHeight = device.windowHeight;
 
 Page({
   /**
@@ -12,6 +13,7 @@ Page({
   */
   data: {
     picChoosed: false,
+    tipGot: false,
     bgPic: null,
     opacity: 0.6, 
 
@@ -27,7 +29,12 @@ Page({
         width: 300,            // Size of the cutting box
         height: 300
       }
-    }
+    },
+    
+    // containerOpt: {
+    //   width,
+    //   deviceHeight,
+    // }
   },
 
   /**
@@ -60,6 +67,44 @@ Page({
         console.log(`current canvas context:`, ctx)
       })
       .updateCanvas()
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onReady: function () {
+    const self = this;
+    if (!this.helpGot) {
+      wx.showModal({
+        title: 'Tips',
+        content: '单指移动图片=>改变剪裁区域；\r\n双指捏合缩放=>改变所剪裁的大小。\r\nUpload a image and crop it. You can simply drag the canvas. \r\nAlso, use two fingers to zoom in or out.',
+        success: function (res) {
+          if (res.confirm) {
+            self.setData({
+              helpGot: true,
+            });
+            console.log('User has confirmed')
+          }
+        }
+      })
+    }
+  },
+
+
+  /**
+   * Tips for users
+   * 帮助
+   */
+  helpBtn() {
+    wx.showModal({
+      title: 'Tips',
+      content: '单指移动图片=>改变剪裁区域；\r\n双指捏合缩放=>改变所剪裁的大小.\r\nUpload a image and crop it. You can simply drag the canvas. \r\nAlso, use two fingers to zoom in or out.',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('User has confirmed')
+        }
+      }
+    })
   },
 
   /**

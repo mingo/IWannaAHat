@@ -81,6 +81,18 @@ var DEFAULT = {
       tmp.height = value;
     }
   },
+  deviceHeight: {
+    default: 750,
+    get: function get() {
+      return tmp.deviceHeight
+    },
+    set: function set (value) {
+      if (typeof (value) !== 'number') {
+        console.error("height " + value + "is invalid");
+      }
+      tmp.deviceHeight = value;
+    } 
+  },
   scale: {
     default: 2.5,
     get: function get () {

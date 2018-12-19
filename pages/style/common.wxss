@@ -1,4 +1,4 @@
-.cropper-wrapper{
+/* .cropper-wrapper{
     position: relative;
     display: flex;
     flex-direction: row;
@@ -7,9 +7,9 @@
     justify-content: center;
     height: 100%;
     background-color: #e5e5e5;
-}
+} */
 
-.cropper-buttons{
+/* .cropper-buttons{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -21,7 +21,7 @@
     width: 100%;
     height: 50px;
     line-height: 50px;
-}
+} */
 
 .cropper-buttons .upload, .cropper-buttons .getCropperImage{
     width: 50%;
