@@ -34,10 +34,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
-    ,
-    bgPic:null
-    ,
+    tip1Got: false,
+    tip2Got: false,
+    userInfo: null,
+    bgPic:null,
     scale:1,
     rotate:0,
     hat_center_x:0,

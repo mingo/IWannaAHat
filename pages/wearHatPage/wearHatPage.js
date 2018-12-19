@@ -4,8 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    tipGot: false,
-
     bgPic: app.globalData.bgPic,
     imgList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     currentHatId: 1,
@@ -52,15 +50,13 @@ Page({
    */
   onReady: function () {
     const self = this;
-    if (!this.tipGot) {
+    if (!app.globalData.tip2Got) {
       wx.showModal({
         title: 'Tips',
         content: '1.左右滑动底部备选栏，预览更多帽子\r\n2.按住帽子框右下角的绿色时针并拖动，完成缩放和和旋转\r\n1.Scroll the bottom bar horizontally to view more options！ \r\n2.Drag the green clock on the right-bottom corner to adjust the hat.',
         success: function (res) {
           if (res.confirm) {
-            self.setData({
-              tipGot: true,
-            });
+            app.globalData.tip2Got = true;
             console.log('User has confirmed')
           }
         }
