@@ -3,15 +3,14 @@
 
 <view class="container" >
   <template is="initial-container" data="{{...containerOpt}}"/>
-  <!-- <h3>还在 "@微信官方，给我一顶圣诞帽吗?" NONONO, 现在就自定义你的圣诞帽！</h3> -->
   <view class="cropper-wrapper">
       <template is="we-cropper" data="{{...cropperOpt}}"/>
       <view class="cropper-buttons">
         <view class="buttonContainer">
-          <button bind:tap="helpBtn" style='background-color:#FF7F50; color:white; opacity: 0.9'>帮助 help </button>
-          <button open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信头像 WX-Avatar</button>
-          <button data-way="camera" bind:tap="imageUploader">相机 Camera</button>
-          <button data-way="album" bind:tap="imageUploader">相册 Album</button>
+          <button bind:tap="helpBtn" class="orangeBtn">帮助 help </button>
+          <button open-type='getUserInfo' class="borderBtn" bindgetuserinfo="onGotUserInfo">微信头像 WX-Avatar</button>
+          <button data-way="camera" class="borderBtn" id="camBtn" style='width:{{btnWidth}}' bind:tap="imageUploader">相机 Camera</button>
+          <button data-way="album" class="borderBtn" id="albumBtn"  style='width:{{btnWidth}}' bind:tap="imageUploader">相册 Album</button>
           <button bind:tap="nextPage" disabled="{{!picChoosed}}" 
             style="opacity: {{opacity}}; color: white; background-color: #1AAD19;">下一步 Let's begin!</button>
         </view>

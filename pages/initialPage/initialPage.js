@@ -6,6 +6,7 @@ const device = wx.getSystemInfoSync(); // get device info
 const width = device.windowWidth;
 const height = width;
 const deviceHeight = device.windowHeight;
+const drp = device.pixelRatio;
 
 Page({
   /**
@@ -16,6 +17,7 @@ Page({
     tipGot: false,
     bgPic: null,
     opacity: 0.6, 
+    btnWidth: width,
 
     cropperOpt: {
       id: 'cropper',
@@ -42,6 +44,20 @@ Page({
    * Life Circle - audit page on load
    */
   onLoad: function (options) {
+    const that = this;
+    if (drp >= 3) {
+      that.setData({
+        btnWidth: "100%"
+      });
+    }
+    else {
+      that.setData({
+        btnWidth: "50%"
+      });
+    }
+
+
+
     const { cropperOpt } = this.data
     
     new WeCropper(cropperOpt)

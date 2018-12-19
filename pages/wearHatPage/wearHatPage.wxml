@@ -1,5 +1,4 @@
 <!--pages/wearHatPage/wearHatPage.wxml-->
-  <h1>Now, put your hat on!</h1>
 <view wx:if="{{!combine}}">
   <view class="container" id="container" bind:touchstart="touchStart" bind:touchend="touchEnd" bind:touchmove="touchMove">
     <image class="bg" src="{{bgPic}}"></image>
