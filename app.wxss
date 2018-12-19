@@ -20,6 +20,7 @@ page {
 .greenBtn {
   color: white;
   background-color: #1AAD19;
+  opacity: 0.9;
 }
 
 .orangeBtn {

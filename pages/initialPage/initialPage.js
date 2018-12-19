@@ -85,14 +85,14 @@ Page({
    */
   onReady: function () {
     const self = this;
-    if (!this.helpGot) {
+    if (!this.tipGot) {
       wx.showModal({
         title: 'Tips',
         content: '单指移动图片=>改变剪裁区域；\r\n双指捏合缩放=>改变所剪裁的大小。\r\nUpload a image and crop it. You can simply drag the canvas. \r\nAlso, use two fingers to zoom in or out.',
         success: function (res) {
           if (res.confirm) {
             self.setData({
-              helpGot: true,
+              tipGot: true,
             });
             console.log('User has confirmed')
           }

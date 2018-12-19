@@ -15,12 +15,8 @@
     </image>
   </view>
 
+ <button bind:tap="helpBtn" class="orangeBtn">帮助 help </button>
   <button bind:tap="combinePic" class="greenBtn">确定 OK</button>
-
-  <h3><span>1.左右滑动底部备选栏，预览更多帽子</span></h3>
-  <h3><span>2.按住帽子框右下角的绿色时针并拖动，完成缩放和和旋转</span></h3>
-  <p><span>1.Scroll the bottom bar horizontally to view more options！</span></p>
-  <p><span>2.Drag the green clock on the right-bottom corner to adjust the hat.</span></p>
   
   <scroll-view class="scrollView" scroll-x="true">
     <image class="imgList" wx:for="...imgList" wx:key="{{index+1}}" src="../../image/{{index+1}}.png" data-hat-id="{{index+1}}" bind:tap="chooseImg"></image>

@@ -44,9 +44,6 @@ button {
   border: 2px solid;
   border-color: white;
   margin: 5px;
-  /* background-color: white; */
-  background-color: #ee1c1ccb;
-  /* background-color: #3498DB; */
 }
 
 p span {
