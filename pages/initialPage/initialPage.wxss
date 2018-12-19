@@ -15,5 +15,5 @@ button {
 }
 
 #camBtn , #albumBtn {
-  display:inline-block;
+  display:inline-table;
 }
