@@ -2,7 +2,6 @@
 <import src="../we-cropper/we-cropper.wxml"/>
 
 <view class="container" >
-  <template is="initial-container" data="{{...containerOpt}}"/>
   <view class="cropper-wrapper">
       <template is="we-cropper" data="{{...cropperOpt}}"/>
       <view class="cropper-buttons">

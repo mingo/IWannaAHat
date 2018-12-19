@@ -5,7 +5,7 @@ const app = getApp();
 const device = wx.getSystemInfoSync(); // get device info
 const width = device.windowWidth;
 const height = width;
-const deviceHeight = device.windowHeight;
+// const deviceHeight = device.windowHeight;
 const drp = device.pixelRatio;
 
 Page({
@@ -32,11 +32,6 @@ Page({
         height: 300
       }
     },
-    
-    // containerOpt: {
-    //   width,
-    //   deviceHeight,
-    // }
   },
 
   /**

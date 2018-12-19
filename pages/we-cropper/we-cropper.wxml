@@ -9,12 +9,3 @@
             canvas-id="{{id}}">
     </canvas>
 </template>
-
-<template name="initial-container">
-    <canvas
-            class="container"
-            disable-scroll="true"
-            style="width:{{width}}px;height:{{height}}px;"
-    >
-    </canvas>
-</template>
