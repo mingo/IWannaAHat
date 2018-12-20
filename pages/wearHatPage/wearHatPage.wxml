@@ -1,25 +1,24 @@
 <!--pages/wearHatPage/wearHatPage.wxml-->
 
-
-
 <view class="container" >
   <!-- pictureContainer -->
-  <view class="picContainer" id="container" bind:touchstart="touchStart" bind:touchend="touchEnd" bind:touchmove="touchMove">
-    <image class="bg" src="{{bgPic}}"></image>
-    
+  <view class="picContainer" bind:touchstart="touchStart" bind:touchend="touchEnd" bind:touchmove="touchMove">
+    <image class="bg" src="{{bgPic}}" style='width:{{width}}; height:{{height}}'></image> 
+
+    <!-- hat container -->
     <icon type="cancel" class="cancel" id="cancel" bind:tap="hideHat" hidden="{{isHidingHat}}"
       style="top:{{cancelCenterY-10+'px'}};left:{{cancelCenterX-10+'px'}}">
     </icon>
     <icon type="waiting" class="handle" id="handle" color="green" hidden="{{isHidingHat}}"
       style="top:{{handleCenterY-10+'px'}};left:{{handleCenterX-10+'px'}}"> 
     </icon>
-
     <image class="hat" id='hat' src="../../image/{{currentHatId}}.png" hidden="{{isHidingHat}}"
       style="top:{{hatCenterY-hatSize/2-2+'px'}};left:{{hatCenterX-hatSize/2-2+'px'}};transform:rotate({{rotate+'deg'}}) scale({{scale}})">
     </image>
+  </view> 
 
     <!-- buttonContainer -->
-    <view class="buttonContainer">
+    <view class="buttonContainer" style='top:{{topSpace}}'>
       <button bind:tap="helpBtn" class="orangeBtn">帮助 help </button>
       <button bind:tap="combinePic" class="greenBtn">确定 OK</button>
     </view>
@@ -28,5 +27,4 @@
     <scroll-view class="scrollView" scroll-x="true">
       <image class="imgList" wx:for="...imgList" wx:key="{{index+1}}" src="../../image/{{index+1}}.png" data-hat-id="{{index+1}}" bind:tap="chooseImg"></image>
     </scroll-view>
-  </view>
 </view>

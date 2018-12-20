@@ -2,12 +2,21 @@
 //获取应用实例
 const app = getApp()
 
+const device = wx.getSystemInfoSync(); // get device info
+const width = device.windowWidth;
+const height = width;
+
+
 Page({
   data: {
     bgPic: app.globalData.bgPic,
     imgList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     currentHatId: 1,
     isHidingHat: false,
+
+    width: width,
+    height: height,
+    topSpace: height,
 
     hatCenterX: wx.getSystemInfoSync().windowWidth / 2,
     hatCenterY: 150,
@@ -21,10 +30,13 @@ Page({
     scale: 1,
     rotate: 0
   },
-  onLoad() {
-    console.log("wearHat: " + app.globalData.bgPic);
+  
+  onLoad: function() {
     this.setData({
-      bgPic: app.globalData.bgPic
+      bgPic: app.globalData.bgPic,
+      width: width - 20 + "px",
+      height: height - 10 + "px",
+      topSpace: height + 10 + "px"
     })
   },
 

@@ -7,7 +7,6 @@ page {
   background-repeat: no-repeat; 
 }
 
-
 .container {
   height: 100%;
   display: flex;
