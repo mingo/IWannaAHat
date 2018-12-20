@@ -1,12 +1,17 @@
 <!--pages/savePicPage/savePicPage.wxml-->
 <view >
-  <h1>Save to my album! 保存到本地相册</h1>
-  <canvas  class="myCanvas" canvas-id="myCanvas" style="height:300px;;width:100%;"/>
-  <button bind:tap="savePic" class="greenBtn">保存 Save</button>
-  <h3>喜欢的话请转发分享哦~</h3>
+  <view class="picContainer">
+    <canvas  class="myCanvas" canvas-id="myCanvas" style='width:{{picWidth}}; height:{{picHeight}}'/>
+  </view>
+ 
+  <view class="buttonContainer" style='top:{{topSpace}}'>
+    <button bind:tap="savePic" class="greenBtn">保存 Save</button>
+  </view>
+
+  <!-- <h3>喜欢的话请转发分享哦~</h3>
   <h3>Don't forget to share ME if you like!</h3>
 <br />
 <br />
   <h2>非常感谢您的使用和支持!若有任何问题或反馈请联系微信号：SL-0125。
-  <br /> Thank you for your support! Please contact wx: SL-0125 if you got any concerns or feedback.</h2>
+  <br /> Thank you for your support! Please contact wx: SL-0125 if you got any concerns or feedback.</h2> -->
 </view>

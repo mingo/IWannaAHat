@@ -1,12 +1,5 @@
 /* pages/wearHatPage/wearHatPage.wxss */
 
-.picContainer {
-  display: block;
-  width: 100%;
-  align-content: center;
-  align-self: center;
-}
-
 .buttonContainer {
   width: 100%;
   position: absolute;
@@ -50,4 +43,5 @@
   border: 2px solid;
   border-color: white;
   margin: 5px;
+  background-color: rgba(0, 0, 0, 0.329);
 }

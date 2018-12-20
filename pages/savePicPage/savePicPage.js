@@ -1,12 +1,25 @@
 // pages/combine/combine.js
 const app = getApp();
+
+const device = wx.getSystemInfoSync(); // get device info
+const width = device.windowWidth;
+const height = width;
+
 Page({
 
   data: {
-
+    picWidth: width,
+    picHeight: height,
+    topSpace: height,
   },
 
   onLoad: function (options) {
+    this.setData({
+      picWidth: width - 20 + "px",
+      picHeight: height - 20 + "px",
+      topSpace: height + "px"
+    });
+
     wx.getImageInfo({
       src: app.globalData.bgPic,
       success: res => {
@@ -15,14 +28,6 @@ Page({
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
 
   draw() {
     let scale = app.globalData.scale;
@@ -34,15 +39,16 @@ Page({
     const windowWidth = wx.getSystemInfoSync().windowWidth;
     const hat_size = 100 * scale;
 
+    var picWidth = windowWidth - 20;
 
-    pc.clearRect(0, 0, windowWidth, 300);
-    pc.drawImage(this.bgPic, windowWidth / 2 - 150, 0, 300, 300);
+    pc.clearRect(0, 0, picWidth, picWidth);
+    pc.drawImage(this.bgPic, 0, 0, picWidth, picWidth);
+
     pc.translate(hat_center_x, hat_center_y);
     pc.rotate(rotate * Math.PI / 180);
     pc.drawImage("../../image/" + currentHatId + ".png", -hat_size / 2, -hat_size / 2, hat_size, hat_size);
     pc.draw();
   },
-
 
   savePic() {
     const windowWidth = wx.getSystemInfoSync().windowWidth;

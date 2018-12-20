@@ -16,6 +16,13 @@ page {
   box-sizing: border-box;
 } 
 
+.picContainer {
+  display: block;
+  width: 100%;
+  align-content: center;
+  align-self: center;
+}
+
 .greenBtn {
   color: white;
   background-color: #1AAD19;
@@ -31,42 +38,3 @@ page {
 .borderBtn {
   border: .1px solid rgb(84, 85, 87);
 }
-
-h1 {
-  margin: 0px 10px 0px 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-family: Microsoft YaHei;
-  font-weight:bold;
-  color: white;
-  align-items: center;
-
-  }
-
-h3 {
-  margin: 0px 10px 0px 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-family: Microsoft YaHei;
-  font-weight:bold;
-  font-size:80%; 
-  color: white;
-  }
-
-  h2 {
-  margin: 0px 10px 0px 10px;
-  align-items: baseline;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-family: Microsoft YaHei;
-  font-size:80%; 
-  color: white;
-  }
-
-  p {
-  margin: 0px 10px 0px 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-size:80%; 
-  color: white;
-  }

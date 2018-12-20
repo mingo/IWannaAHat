@@ -1,1 +1,15 @@
 /* pages/savePicPage/savePicPage.wxss */
+.myCanvas {
+  border: 10px solid;
+  display:block;
+  border-color:rgba(0, 0, 0, 0.8);
+  position: absolute;
+}
+
+.buttonContainer {
+  width: 100%;
+  top: 360px;
+  position: absolute;
+  white-space: nowrap;
+  display:block;
+} 

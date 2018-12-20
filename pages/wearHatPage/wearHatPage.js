@@ -6,7 +6,6 @@ const device = wx.getSystemInfoSync(); // get device info
 const width = device.windowWidth;
 const height = width;
 
-
 Page({
   data: {
     bgPic: app.globalData.bgPic,
@@ -35,8 +34,8 @@ Page({
     this.setData({
       bgPic: app.globalData.bgPic,
       width: width - 20 + "px",
-      height: height - 10 + "px",
-      topSpace: height + 10 + "px"
+      height: height - 20 + "px",
+      topSpace: height + "px"
     })
   },
 
