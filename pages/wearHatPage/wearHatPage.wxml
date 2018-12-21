@@ -19,7 +19,7 @@
 
     <!-- buttonContainer -->
     <view class="buttonContainer" style='top:{{topSpace}}'>
-      <button bind:tap="helpBtn" class="orangeBtn">帮助 help </button>
+      <button bind:tap="helpBtn" class="orangeBtn">帮助 Help </button>
       <button bind:tap="combinePic" class="greenBtn">确定 OK</button>
     </view>
 

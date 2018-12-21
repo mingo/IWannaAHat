@@ -6,7 +6,7 @@
     <template is="we-cropper" data="{{...cropperOpt}}"/>
       
       <view class="buttonContainer">
-        <button bind:tap="helpBtn" class="orangeBtn">帮助 help </button>
+        <button bind:tap="helpBtn" class="orangeBtn">帮助 Help </button>
         <button open-type='getUserInfo' class="borderBtn" bindgetuserinfo="onGotUserInfo">微信头像 WX-Avatar</button>
         <button data-way="camera" class="borderBtn" id="camBtn" style='width:{{btnWidth}}' bind:tap="imageUploader">相机 Camera</button>
         <button data-way="album" class="borderBtn" id="albumBtn"  style='width:{{btnWidth}}' bind:tap="imageUploader">相册 Album</button>

@@ -87,5 +87,21 @@ Page({
         })
       }
     });
-  }
+  },
+
+  /**
+   * Feedbacks
+   * 反馈
+   */
+  feedbackBtn() {
+    wx.showModal({
+      title: '反馈与建议',
+      content: '若有任何问题或反馈请一！定！要！联系微信号：SL-0125 \r\n PLEEEASE contact wx: SL-0125 if you got any concerns or feedbacks.',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('Feedbakc btn');
+        }
+      }
+    })
+  },
 })

@@ -6,6 +6,7 @@
  
   <view class="buttonContainer" style='top:{{topSpace}}'>
     <button bind:tap="savePic" class="greenBtn">保存 Save</button>
+    <button bind:tap="feedbackBtn" class="feedbackBtn">点我！CLICK ME!</button>
   </view>
 
   <!-- <h3>喜欢的话请转发分享哦~</h3>
