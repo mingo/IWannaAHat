@@ -79,14 +79,14 @@ Page({
               complete: function (res) { },
             }), 1500)
 
-            console.log("success:" + res);
+            // console.log("success:" + res);
           }, fail(e) {
             wx.showToast({
               title: '保存失败 Save failure',
               icon: 'warn',
               duration: 2000
             })
-            console.log("err:" + e);
+            // console.log("err:" + e);
           }
         })
       }
