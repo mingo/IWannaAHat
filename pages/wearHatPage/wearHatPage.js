@@ -36,7 +36,11 @@ Page({
       width: width - 20 + "px",
       height: height - 20 + "px",
       topSpace: height + "px"
-    })
+    });
+    
+    wx.showShareMenu({
+      withShareTicket: true
+    });
   },
 
   /**

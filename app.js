@@ -1,5 +1,11 @@
 //app.js
 App({
+  onLoad: function () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

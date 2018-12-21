@@ -38,6 +38,21 @@ Page({
    * Life Circle - audit page on load
    */
   onLoad: function (options) {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
+
+    /** 判断场景值，1044 为转发场景，包含shareTicket 参数 */
+    if (options.scene == 1044) {
+      wx.getShareInfo({
+        shareTicket: options.shareTicket,
+        success: function (res) {
+          var encryptedData = res.encryptedData;
+          var iv = res.iv;
+        }
+      })
+    }
+
     const that = this;
     if (drp >= 3) {
       that.setData({
@@ -212,5 +227,30 @@ Page({
         console.log('Unable to get the image path')
       }
     });
+  },
+
+
+  onShareAppMessage: function () {
+    return {
+      title: '还在@官方求一顶圣诞帽？NONONO！现在就自定义属于你的圣诞帽！',
+      path: '/pages/initialPage/initialPage',
+      imageUrl: '/background/share.jpg',
+      success: function (res) {
+        var shareTickets = res.shareTickets;
+        if (shareTickets.length == 0) {
+          return false;
+        }
+        wx.getShareInfo({
+          shareTicket: shareTickets[0],
+          success: function (res) {
+            var encryptedData = res.encryptedData;
+            var iv = res.iv;
+          }
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })
