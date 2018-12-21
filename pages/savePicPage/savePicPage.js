@@ -72,13 +72,7 @@ Page({
               duration: 2000
             });
 
-            setTimeout(()=>wx.navigateTo({
-              url: '../initialPage/initialPage',
-              success: function (res) { },
-              fail: function (res) { },
-              complete: function (res) { },
-            }), 1500)
-
+            setTimeout(()=>wx.reLaunch({ url: '../initialPage/initialPage' }), 1500)
             console.log("success:" + res);
           }, fail(e) {
             wx.showToast({
