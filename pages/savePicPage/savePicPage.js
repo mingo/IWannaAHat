@@ -54,7 +54,7 @@ Page({
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
           success: (res) => {
-            wx.navigateTo({
+            wx.reLaunch({
               url: '../index/index',
               success: function (res) { },
               fail: function (res) { },
