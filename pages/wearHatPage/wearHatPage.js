@@ -39,7 +39,10 @@ Page({
     })
   },
 
-  onReady() {
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onReady: function () {
     this.hat_center_x = this.data.hatCenterX;
     this.hat_center_y = this.data.hatCenterY;
     this.cancel_center_x = this.data.cancelCenterX;
@@ -53,13 +56,7 @@ Page({
     this.touch_target = "";
     this.start_x = 0;
     this.start_y = 0;
-  },
 
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onReady: function () {
     const self = this;
     if (!app.globalData.tip2Got) {
       wx.showModal({
@@ -201,8 +198,8 @@ Page({
   combinePic() {
     app.globalData.scale = this.scale;
     app.globalData.rotate = this.rotate;
-    app.globalData.hat_center_x = this.hat_center_x;
-    app.globalData.hat_center_y = this.hat_center_y;
+    app.globalData.hat_center_x = this.hat_center_x - 10;
+    app.globalData.hat_center_y = this.hat_center_y - 10;
     app.globalData.currentHatId = this.data.currentHatId;
     wx.navigateTo({
       url: '../savePicPage/savePicPage',
