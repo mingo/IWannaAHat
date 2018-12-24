@@ -37,7 +37,7 @@ Page({
       height: height - 20 + "px",
       topSpace: height + "px"
     });
-    
+
     wx.showShareMenu({
       withShareTicket: true
     });
@@ -69,7 +69,7 @@ Page({
         success: function (res) {
           if (res.confirm) {
             app.globalData.tip2Got = true;
-            console.log('User has confirmed')
+            // console.log('User has confirmed')
           }
         }
       })
@@ -87,7 +87,7 @@ Page({
       content: '1.左右滑动底部备选栏，预览更多帽子\r\n2.按住帽子框右下角的绿色时针并拖动，完成缩放和和旋转\r\n1.Scroll the bottom bar horizontally to view more options！ \r\n2.Drag the green clock on the right-bottom corner to adjust the hat.',
       success: function (res) {
         if (res.confirm) {
-          console.log('User has confirmed')
+          // console.log('User has confirmed')
         }
       }
     })
@@ -170,7 +170,7 @@ Page({
   * Choose a hat from the bottom bar
   */
   chooseImg(e) {
-    console.log(e);
+    // console.log(e);
     this.setData({
       currentHatId: e.target.dataset.hatId,
       isHidingHat: false,

@@ -71,11 +71,11 @@ Page({
     
     new WeCropper(cropperOpt)
       .on('ready', (ctx) => {
-        console.log('wecropper is ready!')
+        // console.log('wecropper is ready!')
       })
       .on('beforeImageLoad', (ctx) => {
-        console.log('before picture loaded')
-        console.log('current canvas context: ${ctx}')
+        // console.log('before picture loaded')
+        // console.log('current canvas context: ${ctx}')
         wx.showToast({
           title: 'Uploading',
           icon: 'loading',
@@ -83,13 +83,13 @@ Page({
         })
       })
       .on('imageLoad', (ctx) => {
-        console.log('picture loaded')
-        console.log('current canvas context: ${ctx}')
+        // console.log('picture loaded')
+        // console.log('current canvas context: ${ctx}')
         wx.hideToast()
       })
       .on('beforeDraw', (ctx, instance) => {
-        console.log(`before canvas draw,i can do something`)
-        console.log(`current canvas context:`, ctx)
+        // console.log(`before canvas draw,i can do something`)
+        // console.log(`current canvas context:`, ctx)
       })
       .updateCanvas()
   },
@@ -107,7 +107,7 @@ Page({
         success: function (res) {
           if (res.confirm) {
             app.globalData.tip1Got = true;
-            console.log('User has confirmed')
+            // console.log('User has confirmed')
           }
         }
       })
@@ -125,7 +125,7 @@ Page({
       content: '单指移动图片=>改变剪裁区域；\r\n双指捏合缩放=>改变所剪裁的大小.\r\nUpload a image and crop it. You can simply drag the canvas. \r\nAlso, use two fingers to zoom in or out.',
       success: function (res) {
         if (res.confirm) {
-          console.log('User has confirmed')
+          // console.log('User has confirmed')
         }
       }
     })
@@ -170,11 +170,9 @@ Page({
    */
   onGotUserInfo: function (e) {
     const self = this;
-    console.log("avatar=" + e.detail.userInfo.avatarUrl);
     this.setData({
       bgPic: e.detail.userInfo.avatarUrl
     })
-    console.log("bgPic=" + this.data.bgPic);
     self.wecropper.pushOrign(this.data.bgPic);
     this.assignPicChoosed();
   },
@@ -224,7 +222,7 @@ Page({
           url: '../wearHatPage/wearHatPage',
         })
       } else {
-        console.log('Unable to get the image path')
+        // console.log('Unable to get the image path')
       }
     });
   },
